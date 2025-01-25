@@ -3,38 +3,40 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #00f1f3, #50c878); /* İki renkli arka plan */
+  background: linear-gradient(to bottom, #00f1f3, #50c878); /* İstediğin iki renk */
   color: white;
 }
 
 /* Konteyner */
 .container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Başlık */
 .headline {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Animasyon Alanı */
 .animation {
   display: flex;
-  gap: 20px;
-  position: relative;
-  justify-content: center;
+  gap: 15px;
 }
 
 /* Büyüme Evreleri */
 .plant-stage {
-  width: 100px;
+  width: 120px; /* Görsellerin boyutunu orantılı yap */
   opacity: 0;
   transform: scale(0.8);
   animation: fadeIn 6s infinite;
