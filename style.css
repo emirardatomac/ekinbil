@@ -1,26 +1,31 @@
-/* Tüm Sayfa ve Body Ayarları */
+/* Genel Ayarlar */
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Taşmaları engelle */
+  overflow: hidden;
 }
 
-/* Tam Ekran Görsel Konteyner */
+/* Tam Ekran Konteyner */
 .fullscreen-container {
   position: relative;
-  width: 100vw; /* Tüm genişlik */
-  height: 100vh; /* Tüm yükseklik */
+  width: 100vw; /* Ekran genişliğini kapla */
+  height: 100vh; /* Ekran yüksekliğini kapla */
+  background-image: url('dogruzaman.png'); /* Görseli arkaplan olarak ayarla */
+  background-size: cover; /* Görseli ekranı kaplayacak şekilde kırp */
+  background-position: center; /* Görseli ortala */
+  background-repeat: no-repeat; /* Görseli tekrarlama */
   display: flex;
-  justify-content: center; /* Ortala */
-  align-items: center; /* Ortala */
-  overflow: hidden; /* Fazlalıkları gizle */
+  justify-content: center; /* İçeriği yatayda ortala */
+  align-items: center; /* İçeriği dikeyde ortala */
 }
 
-/* Görsel */
-.fullscreen-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Oranını koru ve ekranı kapla */
+/* Başlık Yazısı */
+.headline {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Yazıya gölge ekle */
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
