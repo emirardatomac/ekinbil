@@ -1,31 +1,22 @@
-/* Genel Ayarlar */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Tam Ekran Konteyner */
-.fullscreen-container {
-  position: relative;
-  width: 100vw; /* Ekran genişliğini kapla */
-  height: 100vh; /* Ekran yüksekliğini kapla */
-  background-image: url('dogruzaman.png'); /* Görseli arkaplan olarak ayarla */
-  background-size: cover; /* Görseli ekranı kaplayacak şekilde kırp */
-  background-position: center; /* Görseli ortala */
-  background-repeat: no-repeat; /* Görseli tekrarlama */
-  display: flex;
-  justify-content: center; /* İçeriği yatayda ortala */
-  align-items: center; /* İçeriği dikeyde ortala */
+html, body {
+    height: 100%;
 }
 
-/* Başlık Yazısı */
-.headline {
-  font-size: 3rem;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Yazıya gölge ekle */
-  font-family: Arial, sans-serif;
-  text-align: center;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
