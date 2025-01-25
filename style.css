@@ -1,74 +1,77 @@
-/* Arka planı yeşil yapıyoruz */
+/* Genel Ayarlar */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #2e8b57;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #00f1f3, #50c878); /* İki renkli arka plan */
+  color: white;
 }
 
-/* Mesajı yerleştiriyoruz */
-.message {
-    position: absolute;
-    top: 30px;
-    font-size: 3em;
-    color: white;
-    font-weight: bold;
+/* Konteyner */
+.container {
+  text-align: center;
 }
 
-/* Fidan animasyonu için konteyner */
-.tree {
-    position: relative;
-    width: 50px;
-    height: 150px;
-    animation: grow 4s ease-in-out infinite;
+/* Başlık */
+.headline {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Gölge efekti */
 }
 
-/* Fidan gövdesi */
-.branch {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 5px;
-    height: 100%;
-    background-color: #8b4513;
-    transform: translateX(-50%);
-    animation: branchGrow 4s ease-in-out infinite;
+/* Animasyon Alanı */
+.animation {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  justify-content: center;
 }
 
-/* Filiz */
-.leaf {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: #228b22;
-    border-radius: 50%;
-    transform: translateX(-50%);
+/* Büyüme Evreleri */
+.plant-stage {
+  width: 100px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 6s infinite;
+}
+
+.plant-stage:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.plant-stage:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.plant-stage:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.plant-stage:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.plant-stage:nth-child(5) {
+  animation-delay: 4s;
+}
+
+/* Animasyon Efekti */
+@keyframes fadeIn {
+  0%, 20% {
     opacity: 0;
-    animation: leafGrow 4s ease-in-out infinite;
-}
-
-/* Filizlenme animasyonu */
-@keyframes grow {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-@keyframes branchGrow {
-    0% { height: 0; }
-    50% { height: 100%; }
-    100% { height: 0; }
-}
-
-@keyframes leafGrow {
-    0% { opacity: 0; top: 0; }
-    50% { opacity: 1; top: 30px; }
-    100% { opacity: 0; top: 0; }
+    transform: scale(0.8);
+  }
+  40%, 60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
 }
