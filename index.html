@@ -4,17 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yakında Burdalar!</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon (PNG formatında) -->
+    <link rel="icon" href="ekinbil.png" type="image/png">
+
+    <!-- iOS için özel icon (Apple cihazlarında görünür) -->
+    <link rel="apple-touch-icon" href="ekinbil.png">
+
+    <!-- Android için simgeler (192x192 ve 512x512 boyutlarıyla) -->
+    <link rel="icon" sizes="192x192" href="ekinbil.png">
+    <link rel="icon" sizes="512x512" href="ekinbil.png">
+
+    <style>
+        body {
+            background-color: green;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        #animation-container {
+            margin-top: 50px;
+        }
+        /* Animasyon ve stil */
+        .plant {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            position: relative;
+            margin: 0 auto;
+        }
+        .leaf {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+            top: -20px;
+            left: 15px;
+            border-radius: 50%;
+        }
+        .leaf:nth-child(2) {
+            left: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="message">Yakında Burdalar!</h1>
-        <div class="tree">
-            <div class="branch"></div>
+
+    <h1>Yakında Buradalar!</h1>
+
+    <div id="animation-container">
+        <!-- Filizlenen fidan animasyonu -->
+        <div class="plant">
+            <div class="leaf"></div>
             <div class="leaf"></div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Fidanın filizlenmesini simüle eden animasyon
+        const plant = document.querySelector('.plant');
+        let growth = 0;
+        
+        setInterval(() => {
+            if (growth < 100) {
+                growth += 1;
+                plant.style.height = `${50 + growth}px`;
+            }
+        }, 50);
+    </script>
 </body>
 </html>
